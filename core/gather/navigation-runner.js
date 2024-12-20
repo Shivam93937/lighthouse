@@ -243,7 +243,7 @@ async function _cleanup({requestedUrl, driver, resolvedConfig, lhBrowser, lhPage
     resolvedConfig.settings.clearStorageTypes
     );
   }
-
+  // For CEF Client
   // await driver.disconnect();
 
   // If Lighthouse started the Puppeteer instance then we are responsible for closing it.
@@ -282,6 +282,7 @@ async function navigationGather(page, requestor, options = {}) {
       const {hostname = DEFAULT_HOSTNAME, port = DEFAULT_PORT} = flags;
       lhBrowser = await puppeteer.connect({browserURL: `http://${hostname}:${port}`, defaultViewport: null});
       // lhPage = await lhBrowser.newPage();
+      // For CEF CLient
       const pages = await lhBrowser.pages();
       lhPage = pages[0];
       page = lhPage;

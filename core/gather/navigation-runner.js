@@ -244,10 +244,10 @@ async function _cleanup({requestedUrl, driver, resolvedConfig, lhBrowser, lhPage
     );
   }
 
-  await driver.disconnect();
+  // await driver.disconnect();
 
   // If Lighthouse started the Puppeteer instance then we are responsible for closing it.
-  await lhPage?.close();
+  // await lhPage?.close();
   await lhBrowser?.disconnect();
 }
 
@@ -281,7 +281,9 @@ async function navigationGather(page, requestor, options = {}) {
     if (!page) {
       const {hostname = DEFAULT_HOSTNAME, port = DEFAULT_PORT} = flags;
       lhBrowser = await puppeteer.connect({browserURL: `http://${hostname}:${port}`, defaultViewport: null});
-      lhPage = await lhBrowser.newPage();
+      // lhPage = await lhBrowser.newPage();
+      const pages = await lhBrowser.pages();
+      lhPage = pages[0];
       page = lhPage;
     }
 

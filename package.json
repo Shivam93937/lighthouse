@@ -13,7 +13,6 @@
     "node": ">=18.16"
   },
   "scripts": {
-    "prepare": "npm install",
     "prepack": "yarn build-report --standalone --flow --esm && yarn build-types",
     "postpack": "yarn clean-types",
     "build-all": "npm-run-posix-or-windows build-all:task",

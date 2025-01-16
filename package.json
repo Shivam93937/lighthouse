@@ -1,5 +1,5 @@
 {
-  "name": "lighthouse",
+  "name": "lighthousecef",
   "type": "module",
   "version": "12.3.0",
   "description": "Automated auditing, performance metrics, and best practices for the web.",

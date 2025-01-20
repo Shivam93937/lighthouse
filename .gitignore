@@ -7,7 +7,6 @@ npm-debug.log
 .tmp_env
 .tgz
 
-dist
 coverage
 lcov.info
 .nyc_output
